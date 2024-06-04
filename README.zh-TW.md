@@ -1,8 +1,15 @@
 # OpenAI <=> Gemini API 轉換閘道
 
+正體中文 | [English](README.md)
+
 你是否曾經苦於想學習 OpenAI API，
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？
+
+透過 Google Gemini，
+取得屬於自己的免費版 OpenAI API！
+
+> 申請 "YOUR_GEMINI_API"： <https://makersuite.google.com/app/apikey>
 
 ```sh
 curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
@@ -40,9 +47,13 @@ curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
 
 <https://github.com/BerriAI/litellm>
 
+> 一個輕量、快速且易於使用的 OpenAI GPT-3 與 GPT-4 模型 API。
+
 ### Portkey-AI/gateway
 
 <https://github.com/Portkey-AI/gateway>
+
+> 這個閘道簡化了對 200+ 個開源與專有模型的請求，並統一了其 API 通訊協議。
 
 ### 其他
 
@@ -51,4 +62,3 @@ curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
 - https://github.com/songquanpeng/one-api
 - https://github.com/RockChinQ/free-one-api
 - https://github.com/LLM-Red-Team/kimi-free-api
-
