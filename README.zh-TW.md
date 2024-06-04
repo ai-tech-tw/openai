@@ -2,6 +2,8 @@
 
 正體中文 | [English](README.md)
 
+[加入我們的 LINE OpenChat ✨](https://ncurl.xyz/s/wPDojAySg)
+
 你是否曾經苦於想學習 OpenAI API，
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？

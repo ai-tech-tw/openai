@@ -2,6 +2,8 @@
 
 [正體中文](README.zh-TW.md) | English
 
+[Join our LINE OpenChat ✨](https://ncurl.xyz/s/wPDojAySg)
+
 Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
 but don't want to spend money?
