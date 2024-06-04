@@ -17,7 +17,7 @@
 
 > 申請 "你的 Gemini API 金鑰"： <https://makersuite.google.com/app/apikey>
 > 
-> 協定轉換閘道 API 基底端點： <https://web-tech-tw.eu.org/openai>
+> 協定轉換閘道 API 基底端點： <https://web-tech-tw.eu.org/openai/v1>
 
 ## 使用方法
 
