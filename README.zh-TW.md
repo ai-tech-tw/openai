@@ -56,6 +56,8 @@ completion = client.chat.completions.create(
     {"role": "user", "content": "Hello"}
   ],
 )
+
+print(completion)
 ```
 
 在 Python 配合 `requests` 使用：
@@ -64,14 +66,14 @@ completion = client.chat.completions.create(
 from requests import post
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "你的 Gemini API 金鑰"
+api_key = "YOUR_GEMINI_API_KEY"
 
 response = post(
     f"{api_base_url}/chat/completions",
-    headers: {
-        "Authorization": f"Bearer {api_key}"
+    headers={
+        "Authorization": f"Bearer {api_key}",
     },
-    json: {
+    json={
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7

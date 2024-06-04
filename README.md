@@ -56,6 +56,8 @@ completion = client.chat.completions.create(
     {"role": "user", "content": "Hello"}
   ],
 )
+
+print(completion)
 ```
 
 Using in Python with `requests`:
@@ -68,10 +70,10 @@ api_key = "YOUR_GEMINI_API_KEY"
 
 response = post(
     f"{api_base_url}/chat/completions",
-    headers: {
-        "Authorization": f"Bearer {api_key}"
+    headers={
+        "Authorization": f"Bearer {api_key}",
     },
-    json: {
+    json={
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
