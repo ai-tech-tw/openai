@@ -13,7 +13,7 @@ We provide a free OpenAI API conversion gateway,
 through this service, you can use the OpenAI API,
 for development, testing, and learning, without spending a penny.
 
-> Apply for "YOUR_GEMINI_API": <https://makersuite.google.com/app/apikey>
+> Apply for "YOUR_GEMINI_API_KEY": <https://makersuite.google.com/app/apikey>
 >
 > Protocol Conversion Gateway base endpoint: <https://web-tech-tw.eu.org/openai/v1>
 
@@ -23,7 +23,7 @@ Using in the terminal with `curl`:
 
 ```sh
 API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
-API_KEY="YOUR_GEMINI_API"
+API_KEY="YOUR_GEMINI_API_KEY"
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
@@ -41,7 +41,7 @@ Using in Python with `openai`:
 from openai import OpenAI
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "YOUR_GEMINI_API"
+api_key = "YOUR_GEMINI_API_KEY"
 
 client = OpenAI(
     api_key=api_key,
@@ -62,7 +62,7 @@ Using in Python with `requests`:
 from requests import post
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "YOUR_GEMINI_API"
+api_key = "YOUR_GEMINI_API_KEY"
 
 response = post(
     f"{api_base_url}/chat/completions",

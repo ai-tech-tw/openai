@@ -13,7 +13,7 @@
 透過這個服務，你可以使用 OpenAI API，
 進行開發、測試與學習，不用花費一分錢。
 
-> 申請 "YOUR_GEMINI_API"： <https://makersuite.google.com/app/apikey>
+> 申請 "你的 Gemini API 金鑰"： <https://makersuite.google.com/app/apikey>
 > 
 > 協定轉換閘道 API 基底端點： <https://web-tech-tw.eu.org/openai>
 
@@ -23,7 +23,7 @@
 
 ```sh
 API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
-API_KEY="YOUR_GEMINI_API"
+API_KEY="你的 Gemini API 金鑰"
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
@@ -41,7 +41,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
 from openai import OpenAI
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "YOUR_GEMINI_API"
+api_key = "你的 Gemini API 金鑰"
 
 client = OpenAI(
     api_key=api_key,
@@ -62,7 +62,7 @@ completion = client.chat.completions.create(
 from requests import post
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "YOUR_GEMINI_API"
+api_key = "你的 Gemini API 金鑰"
 
 response = post(
     f"{api_base_url}/chat/completions",
