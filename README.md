@@ -1,4 +1,4 @@
-# OpenAI <=> Gemini API Route Gateway
+# OpenAI <=> Gemini API Protocol Conversion Gateway
 
 [正體中文](README.zh-TW.md) | English
 
@@ -9,11 +9,24 @@ but don't want to spend money?
 Through Google Gemini,
 get your own free version of the OpenAI API!
 
+We provide a free OpenAI API conversion gateway,
+through this service, you can use the OpenAI API,
+for development, testing, and learning, without spending a penny.
+
 > Apply for "YOUR_GEMINI_API": <https://makersuite.google.com/app/apikey>
+>
+> Protocol Conversion Gateway base endpoint: <https://web-tech-tw.eu.org/openai/v1>
+
+## Usage
+
+Using in the terminal with `curl`:
 
 ```sh
-curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_GEMINI_API" \
+API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
+API_KEY="YOUR_GEMINI_API"
+
+curl -X POST "$API_BASE_URL/chat/completions" \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
         "model": "gpt-3.5-turbo",
@@ -22,14 +35,74 @@ curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
     }'
 ```
 
+Using in Python with `openai`:
+
+```python
+from openai import OpenAI
+
+api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_key = "YOUR_GEMINI_API"
+
+client = OpenAI(
+    api_key=api_key,
+    base_url=api_base_url,
+)
+
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "user", "content": "Hello"}
+  ],
+)
+```
+
+Using in Python with `requests`:
+
+```python
+from requests import post
+
+api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_key = "YOUR_GEMINI_API"
+
+response = post(
+    f"{api_base_url}/chat/completions",
+    headers: {
+        "Authorization": f"Bearer {api_key}"
+    },
+    json: {
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "Hello"}],
+        "temperature": 0.7
+    }
+)
+
+print(response.json())
+```
+
+## Model Mapping Table
+
+| OpenAI API Model     | Gemini API Model             |
+| -------------------- | ---------------------------- |
+| gpt-3.5-turbo        | gemini-1.0-pro-latest        |
+| gpt-4                | gemini-1.5-flash-latest      |
+| gpt-4-turbo-preview  | gemini-1.5-pro-latest        |
+| gpt-4-vision-preview | gemini-1.0-pro-vision-latest |
+
 ## Special Thanks
 
-[zhu327/gemini-openai-proxy](https://github.com/zhu327/gemini-openai-proxy)
+### zhu327/gemini-openai-proxy
 
-This is a converter between OpenAI and Gemini API,
-this service is set up with this, it operates very simply, stably and quickly.
+<https://github.com/zhu327/gemini-openai-proxy>
 
-Special thanks to him for making such an excellent project.
+> This is a converter between OpenAI and Gemini API,
+> this service is set up with this, it operates very simply, stably and quickly.
+> 
+> Special thanks to him for making such an excellent project.
+
+### Google Gemini
+
+> Thanks to Google for providing the Gemini API service,
+> which allows us to use the OpenAI API for development and learning for free.
 
 ## Other References
 
@@ -57,8 +130,8 @@ Special thanks to him for making such an excellent project.
 
 ### Others
 
-Other magical API route gateways.
+Other magical Protocol Conversion Gateways.
 
-- https://github.com/songquanpeng/one-api
-- https://github.com/RockChinQ/free-one-api
-- https://github.com/LLM-Red-Team/kimi-free-api
+- <https://github.com/songquanpeng/one-api>
+- <https://github.com/RockChinQ/free-one-api>
+- <https://github.com/LLM-Red-Team/kimi-free-api>

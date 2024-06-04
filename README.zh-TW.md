@@ -1,4 +1,4 @@
-# OpenAI <=> Gemini API 轉換閘道
+# OpenAI <=> Gemini API 協定轉換閘道
 
 正體中文 | [English](README.md)
 
@@ -9,11 +9,24 @@
 透過 Google Gemini，
 取得屬於自己的免費版 OpenAI API！
 
+我們免費提供了一個 OpenAI API 轉換閘道，
+透過這個服務，你可以使用 OpenAI API，
+進行開發、測試與學習，不用花費一分錢。
+
 > 申請 "YOUR_GEMINI_API"： <https://makersuite.google.com/app/apikey>
+> 
+> 協定轉換閘道 API 基底端點： <https://web-tech-tw.eu.org/openai>
+
+## 使用方法
+
+在終端機中配合 `curl` 使用：
 
 ```sh
-curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
-    -H "Authorization: Bearer YOUR_GEMINI_API" \
+API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
+API_KEY="YOUR_GEMINI_API"
+
+curl -X POST "$API_BASE_URL/chat/completions" \
+    -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
         "model": "gpt-3.5-turbo",
@@ -22,14 +35,74 @@ curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
     }'
 ```
 
+在 Python 配合 `openai` 使用：
+
+```python
+from openai import OpenAI
+
+api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_key = "YOUR_GEMINI_API"
+
+client = OpenAI(
+    api_key=api_key,
+    base_url=api_base_url,
+)
+
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "user", "content": "Hello"}
+  ],
+)
+```
+
+在 Python 配合 `requests` 使用：
+
+```python
+from requests import post
+
+api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_key = "YOUR_GEMINI_API"
+
+response = post(
+    f"{api_base_url}/chat/completions",
+    headers: {
+        "Authorization": f"Bearer {api_key}"
+    },
+    json: {
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": "Hello"}],
+        "temperature": 0.7
+    }
+)
+
+print(response.json())
+```
+
+## API 模型對應表
+
+| OpenAI API 模型      | Gemini API 模型              |
+| -------------------- | ---------------------------- |
+| gpt-3.5-turbo        | gemini-1.0-pro-latest        |
+| gpt-4                | gemini-1.5-flash-latest      |
+| gpt-4-turbo-preview  | gemini-1.5-pro-latest        |
+| gpt-4-vision-preview | gemini-1.0-pro-vision-latest |
+
 ## 特別感謝
 
-[zhu327/gemini-openai-proxy](https://github.com/zhu327/gemini-openai-proxy)
+### zhu327/gemini-openai-proxy
 
-這是一個 OpenAI 與 Gemini API 的轉換器，
-這個服務便是以這架設的，運作相當簡單、穩定且快速。
+<https://github.com/zhu327/gemini-openai-proxy>
 
-特別感謝他做出這麼優秀的專案。
+> 這是一個 OpenAI 與 Gemini API 的轉換器，
+> 這個服務便是以這架設的，運作相當簡單、穩定且快速。
+> 
+> 特別感謝他做出這麼優秀的專案。
+
+### Google Gemini
+
+> 感謝 Google 提供的 Gemini API 服務，
+> 讓我們可以免費使用 OpenAI API 進行開發與學習。
 
 ## 其他參考
 
@@ -57,8 +130,8 @@ curl -X POST https://web-tech-tw.eu.org/openai/v1/chat/completions \
 
 ### 其他
 
-其他神奇的 API 轉換閘道。
+其他神奇的協定轉換閘道。
 
-- https://github.com/songquanpeng/one-api
-- https://github.com/RockChinQ/free-one-api
-- https://github.com/LLM-Red-Team/kimi-free-api
+- <https://github.com/songquanpeng/one-api>
+- <https://github.com/RockChinQ/free-one-api>
+- <https://github.com/LLM-Red-Team/kimi-free-api>
