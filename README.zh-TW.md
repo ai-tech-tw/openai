@@ -66,7 +66,7 @@ print(completion)
 from requests import post
 
 api_base_url = "https://web-tech-tw.eu.org/openai/v1"
-api_key = "YOUR_GEMINI_API_KEY"
+api_key = "你的 Gemini API 金鑰"
 
 response = post(
     f"{api_base_url}/chat/completions",
