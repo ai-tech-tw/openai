@@ -51,10 +51,11 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-  model="gpt-3.5-turbo",
-  messages=[
-    {"role": "user", "content": "Hello"}
-  ],
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": "Hello"}
+    ],
+    temperature=0.7,
 )
 
 print(completion)
