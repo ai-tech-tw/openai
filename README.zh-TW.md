@@ -2,7 +2,7 @@
 
 正體中文 | [English](README.md)
 
-[加入我們的 LINE OpenChat ✨](https://ncurl.xyz/s/wPDojAySg)
+[加入我們的 LINE OpenChat ✨](https://web-tech.tw/ai)
 
 你是否曾經苦於想學習 OpenAI API，
 設計屬於自己的 ChatGPT 機器人，
@@ -17,14 +17,14 @@
 
 > 申請 "你的 Gemini API 金鑰"： <https://makersuite.google.com/app/apikey>
 > 
-> 協定轉換閘道 API 基底端點： <https://web-tech-tw.eu.org/openai/v1>
+> 協定轉換閘道 API 基底端點： <https://web-tech.tw/recv/openai/v1>
 
 ## 使用方法
 
 在終端機中配合 `curl` 使用：
 
 ```sh
-API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
+API_BASE_URL="https://web-tech.tw/recv/openai/v1"
 API_KEY="你的 Gemini API 金鑰"
 
 curl -X POST "$API_BASE_URL/chat/completions" \
@@ -42,7 +42,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
 ```python
 from openai import OpenAI
 
-api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_base_url = "https://web-tech.tw/recv/openai/v1"
 api_key = "你的 Gemini API 金鑰"
 
 client = OpenAI(
@@ -66,7 +66,7 @@ print(completion)
 ```python
 from requests import post
 
-api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_base_url = "https://web-tech.tw/recv/openai/v1"
 api_key = "你的 Gemini API 金鑰"
 
 response = post(

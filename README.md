@@ -2,7 +2,7 @@
 
 [正體中文](README.zh-TW.md) | English
 
-[Join our LINE OpenChat ✨](https://ncurl.xyz/s/wPDojAySg)
+[Join our LINE OpenChat ✨](https://web-tech.tw/ai)
 
 Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
@@ -17,14 +17,14 @@ for development, testing, and learning, without spending a penny.
 
 > Apply for "YOUR_GEMINI_API_KEY": <https://makersuite.google.com/app/apikey>
 >
-> Protocol Conversion Gateway base endpoint: <https://web-tech-tw.eu.org/openai/v1>
+> Protocol Conversion Gateway base endpoint: <https://web-tech.tw/recv/openai/v1>
 
 ## Usage
 
 Using in the terminal with `curl`:
 
 ```sh
-API_BASE_URL="https://web-tech-tw.eu.org/openai/v1"
+API_BASE_URL="https://web-tech.tw/recv/openai/v1"
 API_KEY="YOUR_GEMINI_API_KEY"
 
 curl -X POST "$API_BASE_URL/chat/completions" \
@@ -42,7 +42,7 @@ Using in Python with `openai`:
 ```python
 from openai import OpenAI
 
-api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_base_url = "https://web-tech.tw/recv/openai/v1"
 api_key = "YOUR_GEMINI_API_KEY"
 
 client = OpenAI(
@@ -66,7 +66,7 @@ Using in Python with `requests`:
 ```python
 from requests import post
 
-api_base_url = "https://web-tech-tw.eu.org/openai/v1"
+api_base_url = "https://web-tech.tw/recv/openai/v1"
 api_key = "YOUR_GEMINI_API_KEY"
 
 response = post(
