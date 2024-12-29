@@ -4,6 +4,8 @@
 
 [Join our LINE OpenChat ✨](https://web-tech.tw/ai)
 
+[Gateway Source Code](https://github.com/ai-tech-tw/ironnect)
+
 Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
 but don't want to spend money?
@@ -95,15 +97,6 @@ print(response.json())
 
 ## Special Thanks
 
-### zhu327/gemini-openai-proxy
-
-<https://github.com/zhu327/gemini-openai-proxy>
-
-> This is a converter between OpenAI and Gemini API,
-> this service is set up with this, it operates very simply, stably and quickly.
-> 
-> Special thanks to him for making such an excellent project.
-
 ### Google Gemini
 
 > Thanks to Google for providing the Gemini API service,
@@ -111,14 +104,26 @@ print(response.json())
 
 ## Other References
 
+### zhu327/gemini-openai-proxy
+
+<https://github.com/zhu327/gemini-openai-proxy>
+
+> This is a converter between OpenAI and Gemini API.
+>
+> This service was set up with this originally,
+> it operates very simply, stably and quickly.
+>
+> Special thanks to him for making such an excellent project.
+
 ### zuisong/gemini-openai-proxy
 
 <https://github.com/zuisong/gemini-openai-proxy>
 
 > This is also a converter between OpenAI and Gemini API.
-> 
-> It's just that his Node.js version seems to have some problems, and other considerations, so it was not adopted.
-> 
+>
+> It's just that his Node.js version seems to have some problems,
+> and other considerations, so it was not adopted.
+>
 > But it is still a good choice, he provides his own preview service endpoint.
 
 ### BerriAI/litellm

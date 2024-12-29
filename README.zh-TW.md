@@ -4,6 +4,8 @@
 
 [加入我們的 LINE OpenChat ✨](https://web-tech.tw/ai)
 
+[閘道原始碼](https://github.com/ai-tech-tw/ironnect)
+
 你是否曾經苦於想學習 OpenAI API，
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？
@@ -16,7 +18,7 @@
 進行開發、測試與學習，不用花費一分錢。
 
 > 申請 "你的 Gemini API 金鑰"： <https://makersuite.google.com/app/apikey>
-> 
+>
 > 協定轉換閘道 API 基底端點： <https://web-tech.tw/recv/openai/v1>
 
 ## 使用方法
@@ -95,15 +97,6 @@ print(response.json())
 
 ## 特別感謝
 
-### zhu327/gemini-openai-proxy
-
-<https://github.com/zhu327/gemini-openai-proxy>
-
-> 這是一個 OpenAI 與 Gemini API 的轉換器，
-> 這個服務便是以這架設的，運作相當簡單、穩定且快速。
-> 
-> 特別感謝他做出這麼優秀的專案。
-
 ### Google Gemini
 
 > 感謝 Google 提供的 Gemini API 服務，
@@ -111,14 +104,25 @@ print(response.json())
 
 ## 其他參考
 
+### zhu327/gemini-openai-proxy
+
+<https://github.com/zhu327/gemini-openai-proxy>
+
+> 這是一個 OpenAI 與 Gemini API 的轉換器。
+>
+> 這個服務原先是以這個程式架設的，
+> 運作相當簡單、穩定且快速。
+>
+> 特別感謝他做出這麼優秀的專案。
+
 ### zuisong/gemini-openai-proxy
 
 <https://github.com/zuisong/gemini-openai-proxy>
 
 > 這也是一個 OpenAI 與 Gemini API 的轉換器。
-> 
+>
 > 只是他的 Node.js 版本似乎有點狀況，以及其他的一些考量，就沒有採用了。
-> 
+>
 > 但仍是一個不錯的選擇，他有提供屬於自己的預覽服務端點。
 
 ### BerriAI/litellm
