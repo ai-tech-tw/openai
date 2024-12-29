@@ -33,7 +33,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "gpt-3.5-turbo",
+        "model": "gemini-1.5-flash",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -53,7 +53,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="gemini-1.5-flash",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -77,7 +77,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "gpt-3.5-turbo",
+        "model": "gemini-1.5-flash",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
@@ -85,15 +85,6 @@ response = post(
 
 print(response.json())
 ```
-
-## API 模型對應表
-
-| OpenAI API 模型      | Gemini API 模型              |
-| -------------------- | ---------------------------- |
-| gpt-3.5-turbo        | gemini-1.0-pro-latest        |
-| gpt-4                | gemini-1.5-flash-latest      |
-| gpt-4-turbo-preview  | gemini-1.5-pro-latest        |
-| gpt-4-vision-preview | gemini-1.0-pro-vision-latest |
 
 ## 特別感謝
 
