@@ -18,6 +18,10 @@
             async onSubmit({ target }) {
                 const formData = new FormData(target);
                 const content = formData.get("content");
+                if (!content) {
+                    this.statusMessage = "請輸入內容";
+                    return;
+                }
                 try {
                     this.statusMessage = "";
                     this.isSubmitting = true;
@@ -41,7 +45,8 @@
                     Ironnect - The LLMs Gateway.
                 </div>
                 <div class="my-2">
-                    <input type="text" name="content" class="w-64 px-4 py-2 text-center border border-gray-300" />
+                    <input type="text" name="content" class="w-64 px-4 py-2 text-center border border-gray-300"
+                        placeholder="請輸入內容" />
                 </div>
                 <div class="my-8">
                     <button type="submit" class="px-8 py-3 text-base text-white bg-blue-600 hover:bg-blue-700"
