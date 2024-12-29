@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Ironnect - The LLMs Gateway. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironnect</title>
+    <link rel="icon" href="/favicon.ico">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/alpinejs@^3/dist/cdn.min.js"></script>
+    <script src="client.js"></script>
+    <script>
+        Alpine.data("appRoot", () => ({
+            year: new Date().getFullYear(),
+            isSubmitting: false,
+            statusMessage: "",
+            messages: [],
+            async onSubmit({ target }) {
+                const formData = new FormData(target);
+                const content = formData.get("content");
+                try {
+                    this.statusMessage = "";
+                    this.isSubmitting = true;
+                    await chatWithAI(this.messages, "gemini-1.5-flash", content);
+                    this.isSubmitting = false;
+                } catch (error) {
+                    this.isSubmitting = false;
+                    this.statusMessage = "發生錯誤，請稍後再試";
+                    console.error(error);
+                }
+            },
+        }));
+    </script>
+</head>
+
+<body>
+    <div class="relative bg-white" x-data="appRoot">
+        <div class="text-center py-8">
+            <form x-on:submit.prevent="onSubmit">
+                <div class="my-8">
+                    Ironnect - The LLMs Gateway.
+                </div>
+                <div class="my-2">
+                    <input type="text" name="content" class="w-64 px-4 py-2 text-center border border-gray-300" />
+                </div>
+                <div class="my-8">
+                    <button type="submit" class="px-8 py-3 text-base text-white bg-blue-600 hover:bg-blue-700"
+                        x-bind:disabled="isSubmitting">
+                        送出
+                    </button>
+                </div>
+                <div class="my-8 text-base text-red-500">
+                    <span x-text="statusMessage"></span>
+                </div>
+            </form>
+            <div class="h-96 w-1/2 text-left mx-auto overflow-y-auto border border-gray-300">
+                <template x-for="message in messages">
+                    <div class="px-8 py-1 text-base">
+                        <span x-text="message.role"></span> ->
+                        <span x-text="message.content"></span>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <footer class="text-center py-8 text-sm leading-6 text-gray-500">
+            &copy;
+            <span x-text="year"></span>
+            <a href="https://ai.web-tech.tw" target="_blank">
+                Artificial Intelligence@web-tech-tw
+            </a>
+        </footer>
+    </div>
+</body>

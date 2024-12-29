@@ -6,6 +6,8 @@
 
 [閘道原始碼](https://github.com/ai-tech-tw/ironnect)
 
+[線上試用](https://ai.web-tech.tw/openai)
+
 你是否曾經苦於想學習 OpenAI API，
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？

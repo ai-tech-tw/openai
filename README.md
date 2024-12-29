@@ -6,6 +6,8 @@
 
 [Gateway Source Code](https://github.com/ai-tech-tw/ironnect)
 
+[Online Demo](https://ai.web-tech.tw/openai)
+
 Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
 but don't want to spend money?
