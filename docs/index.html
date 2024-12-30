@@ -26,7 +26,9 @@
                     this.statusMessage = "";
                     this.isSubmitting = true;
                     await chatWithAI(this.messages, "gemini-1.5-flash", content);
+                    this.$refs.focus.scrollIntoView();
                     this.isSubmitting = false;
+                    target.reset();
                 } catch (error) {
                     this.isSubmitting = false;
                     this.statusMessage = "發生錯誤，請稍後再試";
@@ -40,15 +42,24 @@
 <body>
     <div class="relative bg-white" x-data="appRoot">
         <div class="text-center py-8">
+            <div class="my-8">
+                Ironnect - The LLMs Gateway.
+            </div>
+            <div class="h-64 w-5/6 md:w-1/2 text-left mx-auto overflow-y-auto border border-gray-300">
+                <template x-for="message in messages">
+                    <div class="px-8 py-1 text-base">
+                        <span x-text="message.role"></span> ->
+                        <span x-text="message.content"></span>
+                    </div>
+                </template>
+                <div x-ref="focus"></div>
+            </div>
             <form x-on:submit.prevent="onSubmit">
-                <div class="my-8">
-                    Ironnect - The LLMs Gateway.
-                </div>
-                <div class="my-2">
+                <div class="my-6">
                     <input type="text" name="content" class="w-64 px-4 py-2 text-center border border-gray-300"
                         placeholder="請輸入內容" />
                 </div>
-                <div class="my-8">
+                <div class="my-3">
                     <button type="submit" class="px-8 py-3 text-base text-white bg-blue-600 hover:bg-blue-700"
                         x-bind:disabled="isSubmitting">
                         送出
@@ -58,14 +69,6 @@
                     <span x-text="statusMessage"></span>
                 </div>
             </form>
-            <div class="h-96 w-5/6 md:w-1/2 text-left mx-auto overflow-y-auto border border-gray-300">
-                <template x-for="message in messages">
-                    <div class="px-8 py-1 text-base">
-                        <span x-text="message.role"></span> ->
-                        <span x-text="message.content"></span>
-                    </div>
-                </template>
-            </div>
         </div>
         <footer class="text-center py-8 text-sm leading-6 text-gray-500">
             &copy;
