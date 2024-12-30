@@ -19,8 +19,8 @@ function choose(choices) {
  * @return {Promise<object>} The response from the AI.
  */
 async function createChatCompletions(args) {
-    const baseUrl = "https://web-tech.tw/recv/openai/trial/v1";
-    const accessToken = "ironnect_trial_key";
+    const baseUrl = "https://web-tech.tw/recv/openai/v1";
+    const accessToken = "zr3Pjc68z4bOtw==";
     const requestUrl = `${baseUrl}/chat/completions`;
     const response = await fetch(requestUrl, {
         method: "POST",
