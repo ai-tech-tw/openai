@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <head>
-    <!-- Ironnect - The LLMs Gateway. -->
+    <!-- LLM PlayGround -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ironnect</title>
+    <title>LLM PlayGround</title>
     <link rel="icon" href="/favicon.ico">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/alpinejs@^3/dist/cdn.min.js"></script>
@@ -25,7 +25,7 @@
                 try {
                     this.statusMessage = "";
                     this.isSubmitting = true;
-                    await chatWithAI(this.messages, "gemini-1.5-flash", content);
+                    await chatWithAI(this.messages, "llama-3.1-8b-instant", content);
                     this.$refs.focus.scrollIntoView();
                     this.isSubmitting = false;
                     target.reset();
@@ -43,7 +43,7 @@
     <div class="relative bg-white" x-data="appRoot">
         <div class="text-center py-8">
             <div class="my-8">
-                Ironnect - The LLMs Gateway.
+                LLM PlayGround
             </div>
             <div class="h-64 w-5/6 md:w-1/2 text-left mx-auto overflow-y-auto border border-gray-300">
                 <template x-for="message in messages">

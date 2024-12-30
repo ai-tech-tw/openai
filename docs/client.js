@@ -20,7 +20,7 @@ function choose(choices) {
  */
 async function createChatCompletions(args) {
     const baseUrl = "https://web-tech.tw/recv/openai/v1";
-    const accessToken = "zr3Pjc68z4bOtw==";
+    const accessToken = "groq zr3Pjc68z4bOtw==";
     const requestUrl = `${baseUrl}/chat/completions`;
     const response = await fetch(requestUrl, {
         method: "POST",
@@ -36,18 +36,18 @@ async function createChatCompletions(args) {
 /**
  * Chat with the AI.
  * @param {Array<object>} chatHistory The message box to store chat history.
- * @param {string} chatId The chat ID to chat with the AI.
+ * @param {string} chatModel The chat model to chat with the AI.
  * @param {string} prompt The prompt to chat with the AI.
  * @return {Promise<string>} The response from the AI.
  */
-async function chatWithAI(chatHistory, chatId, prompt) {
+async function chatWithAI(chatHistory, chatModel, prompt) {
     const userPromptMessage = {
         role: "user",
         content: prompt,
     };
 
     const response = await createChatCompletions({
-        model: chatId,
+        model: chatModel,
         messages: [
             ...chatHistory,
             userPromptMessage,
