@@ -23,6 +23,19 @@ for development, testing, and learning, without spending a penny.
 >
 > Protocol Conversion Gateway base endpoint: <https://web-tech.tw/recv/openai/v1>
 
+## Trial Tokens
+
+Too lazy to even apply for a key?!
+No problem, we offer free trial credentials for public use!
+
+However, each credential has a limited quota and can be easily exhausted.
+It is still recommended to apply for your own personal key.
+
+| Provider | Token                     |
+| -------- | ------------------------- |
+| Gemini   | `gemini zr3Pjc68z4bOtw==` |
+| Groq     | `groq zr3Pjc68z4bOtw==`   |
+
 ## Usage
 
 Using in the terminal with `curl`:
