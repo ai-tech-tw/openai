@@ -54,6 +54,19 @@ curl -X POST "$API_BASE_URL/chat/completions" \
     }'
 ```
 
+Using in terminal with `codex`:
+
+```sh
+npm install -g @openai/codex
+
+export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
+export OPENAI_API_KEY="YOUR_GEMINI_API_KEY"
+
+alias codex="codex --provider NYMPH -m gemini-2.0-flash"
+
+codex "explain ipv6 vs ipv4"
+```
+
 Using in Python with `openai`:
 
 ```python

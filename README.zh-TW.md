@@ -54,6 +54,19 @@ curl -X POST "$API_BASE_URL/chat/completions" \
     }'
 ```
 
+在終端機中配合 `codex` 使用：
+
+```sh
+npm install -g @openai/codex
+
+export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
+export OPENAI_API_KEY="你的 Gemini API 金鑰"
+
+alias codex="codex --provider NYMPH -m gemini-2.0-flash"
+
+codex "explain ipv6 vs ipv4"
+```
+
 在 Python 配合 `openai` 使用：
 
 ```python
