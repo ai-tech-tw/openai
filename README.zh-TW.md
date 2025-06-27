@@ -63,9 +63,10 @@ tee -a "$HOME/.zshrc" <<EOF
 # Codex
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
 export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
-alias codex="codex --provider NYMPH -m gemini-2.0-flash"
+alias codex="codex --provider nymph -m gemini-2.0-flash"
 EOF
 
+source "$HOME/.bashrc"
 codex "explain ipv6 vs ipv4"
 ```
 

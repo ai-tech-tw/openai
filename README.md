@@ -48,7 +48,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "gemini-1.5-flash",
+        "model": "gemini-2.0-flash",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -63,9 +63,10 @@ tee -a "$HOME/.bashrc" <<EOF
 # Codex
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
 export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
-alias codex="codex --provider NYMPH -m gemini-2.0-flash"
+alias codex="codex --provider nymph -m gemini-2.0-flash"
 EOF
 
+source "$HOME/.bashrc"
 codex "explain ipv6 vs ipv4"
 ```
 
@@ -83,7 +84,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="gemini-1.5-flash",
+    model="gemini-2.0-flash",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -107,7 +108,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "gemini-1.5-flash",
+        "model": "gemini-2.0-flash",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
