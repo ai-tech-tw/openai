@@ -42,7 +42,7 @@
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="你的 Gemini API 金鑰"
+API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
@@ -60,7 +60,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
 npm install -g @openai/codex
 
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
-export OPENAI_API_KEY="你的 Gemini API 金鑰"
+export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 alias codex="codex --provider NYMPH -m gemini-2.0-flash"
 
@@ -73,7 +73,7 @@ codex "explain ipv6 vs ipv4"
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "你的 Gemini API 金鑰"
+api_key = "gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 client = OpenAI(
     api_key=api_key,
@@ -97,7 +97,7 @@ print(completion)
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "你的 Gemini API 金鑰"
+api_key = "gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 response = post(
     f"{api_base_url}/chat/completions",

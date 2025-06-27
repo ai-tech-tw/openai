@@ -23,7 +23,7 @@ for development, testing, and learning, without spending a penny.
 >
 > Protocol Conversion Gateway base endpoint: <https://web-tech.tw/recv/openai/v1>
 
-## Trial Tokens
+## Trial Keys
 
 Too lazy to even apply for a key?!
 No problem, we offer free trial credentials for public use!
@@ -31,7 +31,7 @@ No problem, we offer free trial credentials for public use!
 However, each credential has a limited quota and can be easily exhausted.
 It is still recommended to apply for your own personal key.
 
-| Provider | Token                     |
+| Provider | Key                       |
 | -------- | ------------------------- |
 | Gemini   | `gemini zr3Pjc68z4bOtw==` |
 | Groq     | `groq zr3Pjc68z4bOtw==`   |
@@ -42,7 +42,7 @@ Using in the terminal with `curl`:
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="YOUR_GEMINI_API_KEY"
+API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
@@ -60,7 +60,7 @@ Using in terminal with `codex`:
 npm install -g @openai/codex
 
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
-export OPENAI_API_KEY="YOUR_GEMINI_API_KEY"
+export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
 
 alias codex="codex --provider NYMPH -m gemini-2.0-flash"
 
@@ -73,7 +73,7 @@ Using in Python with `openai`:
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "YOUR_GEMINI_API_KEY"
+api_key = "gemini zr3Pjc68z4bOtw==" # Your API Key
 
 client = OpenAI(
     api_key=api_key,
@@ -97,7 +97,7 @@ Using in Python with `requests`:
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "YOUR_GEMINI_API_KEY"
+api_key = "gemini zr3Pjc68z4bOtw==" # Your API Key
 
 response = post(
     f"{api_base_url}/chat/completions",
