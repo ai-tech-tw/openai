@@ -60,6 +60,8 @@ Using in terminal with `codex`:
 npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
+# Codex
+
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
 export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
 
