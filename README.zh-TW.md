@@ -59,7 +59,7 @@ curl -X POST "$API_BASE_URL/chat/completions" \
 ```sh
 npm install -g @openai/codex
 
-tee -a "$HOME/.zshrc" <<EOF
+tee -a "$HOME/.bashrc" <<EOF
 # Codex
 export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
 export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
