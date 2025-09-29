@@ -69,7 +69,7 @@ model_provider = "nymph"
 model = "gemini-2.0-flash"
 
 [model_providers.nymph]
-name = "Nymph Provider"
+name = "Nymph"
 base_url = "https://web-tech.tw/recv/openai/v1"
 env_key = "NYMPH_API_KEY"
 EOF
