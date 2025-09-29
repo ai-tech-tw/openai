@@ -61,9 +61,17 @@ npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
 # Codex
-export NYMPH_BASE_URL="https://web-tech.tw/recv/openai/v1"
-export OPENAI_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
-alias codex="codex --provider nymph -m gemini-2.0-flash"
+export NYMPH_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
+EOF
+
+tee -a "$HOME/.codex/config.toml" <<EOF
+model_provider = "nymph"
+model = "gemini-2.0-flash"
+
+[model_providers.nymph]
+name = "Nymph Provider"
+base_url = "https://web-tech.tw/recv/openai/v1"
+env_key = "NYMPH_API_KEY"
 EOF
 
 source "$HOME/.bashrc"
