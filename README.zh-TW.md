@@ -64,7 +64,7 @@ tee -a "$HOME/.bashrc" <<EOF
 export NYMPH_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
 EOF
 
-tee -a "$HOME/.codex/config.toml" <<EOF
+tee "$HOME/.codex/config.toml" <<EOF
 model_provider = "nymph"
 model = "gemini-2.0-flash"
 
