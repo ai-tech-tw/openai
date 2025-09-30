@@ -44,13 +44,13 @@ Using in the terminal with `curl`:
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
+API_KEY="nymph zr3Pjc68z4bOtw==" # Your API Key
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "gemini-2.0-flash",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -86,7 +86,7 @@ Using in Python with `openai`:
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "gemini zr3Pjc68z4bOtw==" # Your API Key
+api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
 
 client = OpenAI(
     api_key=api_key,
@@ -94,7 +94,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="gemini-2.0-flash",
+    model="auto",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -110,7 +110,7 @@ Using in Python with `requests`:
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "gemini zr3Pjc68z4bOtw==" # Your API Key
+api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
 
 response = post(
     f"{api_base_url}/chat/completions",
@@ -118,7 +118,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "gemini-2.0-flash",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
