@@ -33,8 +33,10 @@ It is still recommended to apply for your own personal key.
 
 | Provider | Key                       |
 | -------- | ------------------------- |
+| Nymph    | `nymph zr3Pjc68z4bOtw==`  |
 | Gemini   | `gemini zr3Pjc68z4bOtw==` |
 | Groq     | `groq zr3Pjc68z4bOtw==`   |
+| Iron     | `iron zr3Pjc68z4bOtw==`   |
 
 ## Usage
 
