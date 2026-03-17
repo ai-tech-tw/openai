@@ -1,4 +1,4 @@
-# OpenAI <=> Gemini API Protocol Conversion Gateway
+# OpenAI Model Trial Endpoint for Free Developers
 
 [正體中文](README.zh-TW.md) | English
 
@@ -12,15 +12,13 @@ Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
 but don't want to spend money?
 
-Through Google Gemini,
+Through Cerebras,
 get your own free version of the OpenAI API!
 
 We provide a free OpenAI API conversion gateway,
 through this service, you can use the OpenAI API,
 for development, testing, and learning, without spending a penny.
 
-> Apply for "YOUR_GEMINI_API_KEY": <https://makersuite.google.com/app/apikey>
->
 > Protocol Conversion Gateway base endpoint: <https://web-tech.tw/recv/openai/v1>
 
 ## Trial Keys
@@ -31,12 +29,11 @@ No problem, we offer free trial credentials for public use!
 However, each credential has a limited quota and can be easily exhausted.
 It is still recommended to apply for your own personal key.
 
-| Provider | Key                       |
-| -------- | ------------------------- |
-| Nymph    | `nymph zr3Pjc68z4bOtw==`  |
-| Gemini   | `gemini zr3Pjc68z4bOtw==` |
-| Groq     | `groq zr3Pjc68z4bOtw==`   |
-| Iron     | `iron zr3Pjc68z4bOtw==`   |
+| Provider | Key                         |
+| -------- | --------------------------- |
+| Cerebras | `cerebras zr3Pjc68z4bOtw==` |
+| Nymph    | `nymph zr3Pjc68z4bOtw==`    |
+| Iron     | `iron zr3Pjc68z4bOtw==`     |
 
 ## Usage
 
@@ -44,13 +41,13 @@ Using in the terminal with `curl`:
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="nymph zr3Pjc68z4bOtw==" # Your API Key
+API_KEY="cerebras zr3Pjc68z4bOtw==" # Your API Key
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "auto",
+        "model": "llama3.1-8b",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -63,17 +60,17 @@ npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
 # Codex
-export NYMPH_API_KEY="gemini zr3Pjc68z4bOtw==" # Your API Key
+export CEREBRAS_API_KEY="cerebras zr3Pjc68z4bOtw==" # Your API Key
 EOF
 
 tee "$HOME/.codex/config.toml" <<EOF
-model_provider = "nymph"
-model = "gemini-2.0-flash"
+model_provider = "cerebras"
+model = "llama3.1-8b"
 
-[model_providers.nymph]
-name = "Nymph"
+[model_providers.cerebras]
+name = "Cerebras"
 base_url = "https://web-tech.tw/recv/openai/v1"
-env_key = "NYMPH_API_KEY"
+env_key = "CEREBRAS_API_KEY"
 EOF
 
 source "$HOME/.bashrc"
@@ -86,7 +83,7 @@ Using in Python with `openai`:
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
+api_key = "cerebras zr3Pjc68z4bOtw==" # Your API Key
 
 client = OpenAI(
     api_key=api_key,
@@ -94,7 +91,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="auto",
+    model="llama3.1-8b",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -110,7 +107,7 @@ Using in Python with `requests`:
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
+api_key = "cerebras zr3Pjc68z4bOtw==" # Your API Key
 
 response = post(
     f"{api_base_url}/chat/completions",
@@ -118,7 +115,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "auto",
+        "model": "llama3.1-8b",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
@@ -131,8 +128,8 @@ print(response.json())
 
 ### Google Gemini
 
-> Thanks to Google for providing the Gemini API service,
-> which allows us to use the OpenAI API for development and learning for free.
+> Thanks to Google for providing the Gemini API service in the past,
+> which allowed us to use the OpenAI API for development and learning for free.
 
 ## Other References
 
