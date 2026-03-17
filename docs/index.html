@@ -25,7 +25,7 @@
                 try {
                     this.statusMessage = "";
                     this.isSubmitting = true;
-                    await chatWithAI(this.messages, "llama-3.1-8b-instant", content);
+                    await chatWithAI(this.messages, "auto", content);
                     this.$refs.focus.scrollIntoView();
                     this.isSubmitting = false;
                     target.reset();
