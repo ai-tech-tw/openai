@@ -20,7 +20,7 @@ function choose(choices) {
  */
 async function createChatCompletions(args) {
     const baseUrl = "https://web-tech.tw/recv/openai/v1";
-    const accessToken = "cerebras zr3Pjc68z4bOtw==";
+    const accessToken = "nymph zr3Pjc68z4bOtw==";
     const requestUrl = `${baseUrl}/chat/completions`;
     const response = await fetch(requestUrl, {
         method: "POST",
