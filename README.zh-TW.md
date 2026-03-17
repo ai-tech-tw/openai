@@ -1,4 +1,4 @@
-# OpenAI <=> Gemini API 協定轉換閘道
+# 為自由開發者提供的OpenAI模型試用端點
 
 正體中文 | [English](README.md)
 
@@ -12,15 +12,13 @@
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？
 
-透過 Google Gemini，
+透過 Cerebras，
 取得屬於自己的免費版 OpenAI API！
 
 我們免費提供了一個 OpenAI API 轉換閘道，
 透過這個服務，你可以使用 OpenAI API，
 進行開發、測試與學習，不用花費一分錢。
 
-> 申請 "你的 Gemini API 金鑰"： <https://makersuite.google.com/app/apikey>
->
 > 協定轉換閘道 API 基底端點： <https://web-tech.tw/recv/openai/v1>
 
 ## 免申請試用金鑰
@@ -31,12 +29,11 @@
 可是每個憑證可用額度有限，容易資源耗盡。
 仍舊建議自行申請屬於自己的金鑰。
 
-| 供應商 | 金鑰                      |
-| ------ | ------------------------- |
-| Nymph  | `nymph zr3Pjc68z4bOtw==`  |
-| Gemini | `gemini zr3Pjc68z4bOtw==` |
-| Groq   | `groq zr3Pjc68z4bOtw==`   |
-| Iron   | `iron zr3Pjc68z4bOtw==`   |
+| 供應商   | 金鑰                        |
+| -------- | --------------------------- |
+| Cerebras | `cerebras zr3Pjc68z4bOtw==` |
+| Nymph    | `nymph zr3Pjc68z4bOtw==`    |
+| Iron     | `iron zr3Pjc68z4bOtw==`     |
 
 ## 使用方法
 
@@ -44,13 +41,13 @@
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
+API_KEY="cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "auto",
+        "model": "llama3.1-8b",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -63,17 +60,17 @@ npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
 # Codex
-export NYMPH_API_KEY="gemini zr3Pjc68z4bOtw==" # 你的 API 金鑰
+export CEREBRAS_API_KEY="cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
 EOF
 
 tee "$HOME/.codex/config.toml" <<EOF
-model_provider = "nymph"
-model = "gemini-2.0-flash"
+model_provider = "cerebras"
+model = "llama3.1-8b"
 
-[model_providers.nymph]
-name = "Nymph"
+[model_providers.cerebras]
+name = "Cerebras"
 base_url = "https://web-tech.tw/recv/openai/v1"
-env_key = "NYMPH_API_KEY"
+env_key = "CEREBRAS_API_KEY"
 EOF
 
 source "$HOME/.bashrc"
@@ -86,7 +83,7 @@ codex "explain ipv6 vs ipv4"
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
+api_key = "cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 client = OpenAI(
     api_key=api_key,
@@ -94,7 +91,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="auto",
+    model="llama3.1-8b",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -110,7 +107,7 @@ print(completion)
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
+api_key = "cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 response = post(
     f"{api_base_url}/chat/completions",
@@ -118,7 +115,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "auto",
+        "model": "llama3.1-8b",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
@@ -131,7 +128,7 @@ print(response.json())
 
 ### Google Gemini
 
-> 感謝 Google 提供的 Gemini API 服務，
+> 感謝過去 Google 提供的 Gemini API 服務，
 > 讓我們可以免費使用 OpenAI API 進行開發與學習。
 
 ## 其他參考
