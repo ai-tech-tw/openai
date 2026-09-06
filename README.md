@@ -12,7 +12,7 @@ Have you ever struggled to learn the OpenAI API,
 wanting to design your own ChatGPT robot,
 but don't want to spend money?
 
-Through Cerebras,
+Through Nymph,
 get your own free version of the OpenAI API!
 
 We provide a free OpenAI API conversion gateway,
@@ -29,11 +29,10 @@ No problem, we offer free trial credentials for public use!
 However, each credential has a limited quota and can be easily exhausted.
 It is still recommended to apply for your own personal key.
 
-| Provider | Key                         |
-| -------- | --------------------------- |
-| Cerebras | `cerebras zr3Pjc68z4bOtw==` |
-| Nymph    | `nymph zr3Pjc68z4bOtw==`    |
-| Iron     | `iron zr3Pjc68z4bOtw==`     |
+| Provider | Key                      |
+| -------- | ------------------------ |
+| Nymph    | `nymph zr3Pjc68z4bOtw==` |
+| Iron     | `iron zr3Pjc68z4bOtw==`  |
 
 ## Usage
 
@@ -41,13 +40,13 @@ Using in the terminal with `curl`:
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="cerebras zr3Pjc68z4bOtw==" # Your API Key
+API_KEY="nymph zr3Pjc68z4bOtw==" # Your API Key
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "llama3.1-8b",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -60,17 +59,17 @@ npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
 # Codex
-export CEREBRAS_API_KEY="cerebras zr3Pjc68z4bOtw==" # Your API Key
+export NYMPH_API_KEY="nymph zr3Pjc68z4bOtw==" # Your API Key
 EOF
 
 tee "$HOME/.codex/config.toml" <<EOF
-model_provider = "cerebras"
-model = "llama3.1-8b"
+model_provider = "nymph"
+model = "auto"
 
-[model_providers.cerebras]
-name = "Cerebras"
+[model_providers.nymph]
+name = "Nymph"
 base_url = "https://web-tech.tw/recv/openai/v1"
-env_key = "CEREBRAS_API_KEY"
+env_key = "NYMPH_API_KEY"
 EOF
 
 source "$HOME/.bashrc"
@@ -83,7 +82,7 @@ Using in Python with `openai`:
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "cerebras zr3Pjc68z4bOtw==" # Your API Key
+api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
 
 client = OpenAI(
     api_key=api_key,
@@ -91,7 +90,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="llama3.1-8b",
+    model="auto",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -107,7 +106,7 @@ Using in Python with `requests`:
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "cerebras zr3Pjc68z4bOtw==" # Your API Key
+api_key = "nymph zr3Pjc68z4bOtw==" # Your API Key
 
 response = post(
     f"{api_base_url}/chat/completions",
@@ -115,7 +114,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "llama3.1-8b",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }

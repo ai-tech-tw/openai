@@ -12,7 +12,7 @@
 設計屬於自己的 ChatGPT 機器人，
 卻不想花錢？
 
-透過 Cerebras，
+透過 Nymph，
 取得屬於自己的免費版 OpenAI API！
 
 我們免費提供了一個 OpenAI API 轉換閘道，
@@ -29,11 +29,10 @@
 可是每個憑證可用額度有限，容易資源耗盡。
 仍舊建議自行申請屬於自己的金鑰。
 
-| 供應商   | 金鑰                        |
-| -------- | --------------------------- |
-| Cerebras | `cerebras zr3Pjc68z4bOtw==` |
-| Nymph    | `nymph zr3Pjc68z4bOtw==`    |
-| Iron     | `iron zr3Pjc68z4bOtw==`     |
+| 供應商   | 金鑰                     |
+| -------- | ------------------------ |
+| Nymph    | `nymph zr3Pjc68z4bOtw==` |
+| Iron     | `iron zr3Pjc68z4bOtw==`  |
 
 ## 使用方法
 
@@ -41,13 +40,13 @@
 
 ```sh
 API_BASE_URL="https://web-tech.tw/recv/openai/v1"
-API_KEY="cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
+API_KEY="nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 curl -X POST "$API_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $API_KEY" \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "llama3.1-8b",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }'
@@ -60,17 +59,17 @@ npm install -g @openai/codex
 
 tee -a "$HOME/.bashrc" <<EOF
 # Codex
-export CEREBRAS_API_KEY="cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
+export NYMPH_API_KEY="nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
 EOF
 
 tee "$HOME/.codex/config.toml" <<EOF
-model_provider = "cerebras"
-model = "llama3.1-8b"
+model_provider = "nymph"
+model = "auto"
 
-[model_providers.cerebras]
-name = "Cerebras"
+[model_providers.nymph]
+name = "Nymph"
 base_url = "https://web-tech.tw/recv/openai/v1"
-env_key = "CEREBRAS_API_KEY"
+env_key = "NYMPH_API_KEY"
 EOF
 
 source "$HOME/.bashrc"
@@ -83,7 +82,7 @@ codex "explain ipv6 vs ipv4"
 from openai import OpenAI
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
+api_key = "nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 client = OpenAI(
     api_key=api_key,
@@ -91,7 +90,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="llama3.1-8b",
+    model="auto",
     messages=[
         {"role": "user", "content": "Hello"}
     ],
@@ -107,7 +106,7 @@ print(completion)
 from requests import post
 
 api_base_url = "https://web-tech.tw/recv/openai/v1"
-api_key = "cerebras zr3Pjc68z4bOtw==" # 你的 API 金鑰
+api_key = "nymph zr3Pjc68z4bOtw==" # 你的 API 金鑰
 
 response = post(
     f"{api_base_url}/chat/completions",
@@ -115,7 +114,7 @@ response = post(
         "Authorization": f"Bearer {api_key}",
     },
     json={
-        "model": "llama3.1-8b",
+        "model": "auto",
         "messages": [{"role": "user", "content": "Hello"}],
         "temperature": 0.7
     }
