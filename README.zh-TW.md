@@ -32,7 +32,6 @@
 | 供應商   | 金鑰                     |
 | -------- | ------------------------ |
 | Nymph    | `nymph zr3Pjc68z4bOtw==` |
-| Iron     | `iron zr3Pjc68z4bOtw==`  |
 
 ## 使用方法
 
